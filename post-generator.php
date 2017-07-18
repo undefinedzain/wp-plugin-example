@@ -64,15 +64,8 @@ function mt_toplevel_page() {
 	?>
 	<?php
     	global $wpdb;
-    	$table_name = $wpdb->prefix . 'backlink_management';
-    	$filter = '';
-    	if (isset($_GET['filter'])) {
-    		$filter = "WHERE backlink_type LIKE '".$_GET['filter']."' ";
-    	}else{
-    		$filter = '';
-    	}
-
-		$result = $wpdb->get_results("SELECT * from $table_name ".$filter);
+    	// $table_name = $wpdb->prefix . 'backlink_management';
+		// $result = $wpdb->get_results("SELECT * from $table_name ".$filter);
 		if (isset($_GET['success']) && $_GET['success'] == 'true') { ?>
 	
 			<div id='message' class='updated notice notice-success is-dismissible' style='margin: 15px 2px;'>
