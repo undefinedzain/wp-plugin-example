@@ -1,28 +1,8 @@
 # README #
 
-This is just a simple readme
-
-### What is this repository for? ###
-
-* This repository is for plugin, will make many plugins (for wordpress)
-* Beta
-
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* Clone this repo under your wp site directory (wordpres/wp-content/plugins)
+* visit your site and activate this plugin from "plugin" page
+* Enjoy
+* read post-generator.php for example and simple comment for documentation
