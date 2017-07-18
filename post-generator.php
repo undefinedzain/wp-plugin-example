@@ -90,7 +90,7 @@ function mt_toplevel_page() {
 		<label>Sufix</label>
 		<input type="text" class="form-control" name="sufix"><br>
 		<label>Konten</label>
-		<textarea class="form-control"></textarea><br>
+		<textarea class="form-control" style="min-height: 210px;resize: vertical;"></textarea><br>
 		<button class="button button-primary button-large">Post</button>
 		<button class="button button-primary button-large">Draft</button>
 	</form>
