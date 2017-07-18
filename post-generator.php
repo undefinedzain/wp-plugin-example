@@ -84,13 +84,13 @@ function mt_toplevel_page() {
 	<h2 class="page-title">Auto generate post</h2>
 	<form class="post-form" style="width:50%;margin:0 auto;" action="../wp-content/plugins/post-generator/autogenerate-process.php" method='post'>
 		<label>Title</label>
-		<input type="text" class="form-control" name="title"><br>
+		<input type="text" class="form-control" name="title" placeholder="Post title"><br>
 		<label>Prefix</label>
-		<input type="text" class="form-control" name="prefix"><br>
+		<input type="text" class="form-control" name="prefix" placeholder="Post prefix"><br>
 		<label>Sufix</label>
-		<input type="text" class="form-control" name="sufix"><br>
-		<label>Konten</label>
-		<textarea class="form-control" style="min-height: 210px;resize: vertical;"></textarea><br>
+		<input type="text" class="form-control" name="sufix" placeholder="Post sufix"><br>
+		<label>Content</label>
+		<textarea class="form-control" style="min-height: 210px;resize: vertical;" placeholder="Post content"></textarea><br>
 		<button class="button button-primary button-large">Post</button>
 		<button class="button button-primary button-large">Draft</button>
 	</form>
