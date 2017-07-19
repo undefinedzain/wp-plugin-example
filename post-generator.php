@@ -57,7 +57,6 @@ function mt_add_pages() {
     add_menu_page(__('Post generator','Post generator'), __('Post generator','menu-test'), 'manage_options', 'post-generator', 'mt_toplevel_page',$icon_url, '23,56' );
 }
 
-
 // fungsi view halaman nya
 function mt_toplevel_page() { 
 	ob_start();
@@ -75,21 +74,44 @@ function mt_toplevel_page() {
 		<?php } ?>
     
 	<h2 class="page-title">Auto generate post</h2>
-	<form class="post-form" style="width:50%;margin:0 auto;" action="../wp-content/plugins/post-generator/autogenerate-process.php" method='post'>
+	<div class="post-form">
 		<label>Title</label>
-		<input type="text" class="form-control" name="title" placeholder="Post title"><br>
+		<input type="text" value="Pancake durian" class="form-control post_title" name="title" placeholder="Post title"><br>
 		<label>Prefix</label>
-		<input type="text" class="form-control" name="prefix" placeholder="Post prefix"><br>
+		<input type="text" value="jual,info,harga" class="form-control post_prefix" name="prefix" placeholder="Post prefix"><br>
 		<label>Sufix</label>
-		<input type="text" class="form-control" name="sufix" placeholder="Post sufix"><br>
+		<input type="text" value="Semarang,Jakarta,Aceh" class="form-control post_sufix" name="sufix" placeholder="Post sufix"><br>
 		<label>Content</label>
-		<textarea class="form-control" style="min-height: 210px;resize: vertical;" placeholder="Post content"></textarea><br>
-		<button class="button button-primary button-large">Post</button>
-		<button class="button button-primary button-large">Draft</button>
-	</form>
-	
-	<script type='text/javascript' src='../wp-content/plugins/sintesa-backlink-management/jquery-2.1.4.min.js'></script>
+		<textarea class="form-control post_content" placeholder="Post content">{halo|bro|sis} jual {murah|miring}</textarea><br>
+		<button class="button button-primary button-large" id="post">Post</button>
+		<!-- <button class="button button-primary button-large">Draft</button> -->
+	</div>
+	<!-- Pancake durian -->
+	<!-- jual,info,harga -->
+	<!-- Semarang,Jakarta,Aceh -->
+	<!-- {halo|bro|sis} jual {murah|miring} -->
+	<div id="loading">
+		<div class="cssload-jar">
+			<div class="cssload-mouth"></div>
+			<div class="cssload-neck"></div>
+			<div class="cssload-base">
+				<div class="cssload-liquid"> </div>
+				<div class="cssload-wave"></div>
+				<div class="cssload-wave"></div>
+				<div class="cssload-bubble"></div>
+				<div class="cssload-bubble"></div>
+			</div>
+			<div class="cssload-bubble"></div>
+			<div class="cssload-bubble"></div>
+		</div>
+		<h1>Loading ...</h1>
+	</div>
+	<div class="post-result">
+		<ul class="post-results"></ul>
+	</div>
+	<script type='text/javascript' src='../wp-content/plugins/post-generator/jquery-2.1.4.min.js'></script>
 <?php
+	wp_enqueue_script('autogenerate-process','/wp-content/plugins/post-generator/process.js');
 	$page = ob_get_contents();
    	ob_end_clean();
    	// echo halaman nya
