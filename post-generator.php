@@ -63,6 +63,7 @@ function mt_toplevel_page() {
 	?>
 	<?php
     	global $wpdb;
+    	$authors = $wpdb->get_results("SELECT ID, user_nicename from $wpdb->users ORDER BY display_name");
     	// $table_name = $wpdb->prefix . 'backlink_management';
 		// $result = $wpdb->get_results("SELECT * from $table_name ".$filter);
 		if (isset($_GET['success']) && $_GET['success'] == 'true') { ?>
@@ -74,6 +75,23 @@ function mt_toplevel_page() {
 		<?php } ?>
     
 	<h2 class="page-title">Auto generate post</h2>
+	<?php
+
+		// $args = array(
+		//     'orderby'       => 'name', 
+		//     'order'         => 'ASC', 
+		//     'number'        => null,
+		//     'optioncount'   => false, 
+		//     'exclude_admin' => true, 
+		//     'show_fullname' => true,
+		//     'hide_empty'    => true
+		//     );
+
+		// $authors = wp_list_authors( $args );
+		print_r($authors);
+
+	?>
+	// <h2><?= $authors; ?></h2>
 	<div class="post-form">
 		<label>Title</label>
 		<input type="text" value="Pancake durian" class="form-control post_title" name="title" placeholder="Post title"><br>
